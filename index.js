@@ -52,8 +52,8 @@ function Airplane(name) {
   Person.prototype.speak = function () {
     return this.name + " " + this.age;
   }
-
-
+  
+  
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -78,7 +78,7 @@ function Airplane(name) {
    return milesPerGallon;
  }
   Car.prototype.drive = function () {
-    return ;
+    return this.odometer + " " + this.tank;
   }
   
   /*
@@ -94,7 +94,7 @@ function Airplane(name) {
    this.favoriteToy = favoriteToy;
   }
   Baby.prototype.play = function () {
-    return "Playing with x";
+    return "trains";
   }
   Baby.prototype.eat = 'someFood';
   Baby.prototype.poop = 'empty';
