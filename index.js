@@ -7,6 +7,8 @@
         + If a plane lands, its `isFlying` property is set to false.
 */
 
+import { transformFromAstAsync } from "@babel/core";
+
 // EXAMPLE SOLUTION CODE:
 function Airplane(name) {
     this.name = name;
@@ -38,17 +40,20 @@ function Airplane(name) {
       - Give instances of Person a method `.toString()`:
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
-  
- function Person() {
-    
+ const foods = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ function Person(name, age) {
+   this.name = name;
+   this.age = age;
+   this.stomach = [];
+   this.stomach.length = 0;
+ }
+  Person.prototype.eat = 'someFood';
+  Person.prototype.poop = 'empty';
+  Person.prototype.speak = function () {
+    return this.name + " " + this.age;
   }
- 
- 
 
-  
-  
-  
-  
+
   /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -63,10 +68,18 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+   this.model = model;
+   this.milesPerGallon = milesPerGallon;
+   this.tank = 0;
+   this.odometer = 0;
+ }
+ Car.prototype.fill = function () {
+   return milesPerGallon;
+ }
+  Car.prototype.drive = function () {
+    return ;
   }
-  
   
   /*
     TASK 3
@@ -75,18 +88,27 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+   this.name = name;
+   this.age = age;
+   this.favoriteToy = favoriteToy;
   }
- 
+  Baby.prototype.play = function () {
+    return "Playing with x";
+  }
+  Baby.prototype.eat = 'someFood';
+  Baby.prototype.poop = 'empty';
+  Baby.prototype.speak = function () {
+    return this.name + " " + this.age;
+  }
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Whenever a function is contained in the global scope, the value of this inside of that function will be the window object.
+    2. Whenever a function is called by a preceding dot, the object before that dot is this.
+    3. Whenever a constructor function is used, this refers to the specific instance of the object that is created and returned by the constructor function.
+    4. Whenever JavaScript’s call or apply method is used, this is explicitly defined.
   */
   
   
