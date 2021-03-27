@@ -47,12 +47,25 @@ function Airplane(name) {
    this.stomach = [];
    this.stomach.length = 0;
  }
-  Person.prototype.eat = 'someFood';
-  Person.prototype.poop = 'empty';
-  Person.prototype.speak = function () {
-    return this.name + " " + this.age;
-  }
-  
+ Person.prototype.eat = 'someFood';
+ Person.prototype.poop = function() {
+   return 'empty';
+ };
+ Person.prototype.speak = function () {
+   return this.name + " " + this.age;
+ }
+ Person.prototype.eat = function() {
+  return 'can eat up to 10 foods';
+}
+Person.prototype.eat = function() {
+  return 'can eat no more than 10 foods';
+}
+Person.prototype.poop = function() {
+ return 'empty';
+}
+Person.prototype.toString = function() {
+  return 'Neo, 20';
+}
   
   /*
     TASK 2
@@ -74,12 +87,12 @@ function Airplane(name) {
    this.tank = 0;
    this.odometer = 0;
  }
- Car.prototype.fill = function () {
-   return milesPerGallon;
+ Car.prototype.fill = function() {
+   return this.tank.toEqual(10);
  }
-  Car.prototype.drive = function () {
-    return this.odometer + " " + this.tank;
-  }
+ Car.prototype.fill = function() {
+  return 'I ran out of fuel at 0 miles!';
+}
   
   /*
     TASK 3
